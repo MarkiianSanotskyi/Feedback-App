@@ -4,29 +4,31 @@ import { v4 as uuidv4 } from 'uuid'
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const [feedback, setFeedback] = useState([])
-
     const [feedbackEdit, setFeedbackEdit] = useState({
         item: {},
-        edit: false
+        edit: false,
     })
 
 
+
     useEffect(() => {
-
+        setIsLoading(true)
         fetchFeedback()
-
+        setIsLoading(false)
     }, [])
 
-   // Fetch feedback
-  const fetchFeedback = async () => {
-    const response = await fetch(`/feedback?_sort=id&_order=desc`)
-    const data = await response.json()
+    // Fetch feedback
+    const fetchFeedback = async() => {
+        const response = await fetch(
+            'http://localhost:6001/feedback?_sort=id&_order=desc'
+        )
+        const data = await response.json()
 
-    setFeedback(data)
-    setIsLoading(false)
-  }
+        setFeedback(data)
+        setIsLoading(false)
+    }
 
 
     // Add Feedback
