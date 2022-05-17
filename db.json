@@ -16,12 +16,9 @@
       "text": "This is feedback item 3 coming from the backend"
     },
     {
+      "text": "test tesfsdfasdasdasdasd test",
+      "rating": 4,
       "id": 4
-    },
-    {
-      "rating": "7",
-      "text": "new",
-      "id": 5
     }
   ]
 }
