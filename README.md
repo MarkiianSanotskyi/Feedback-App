@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+Here is the link for the Deploy Version - https://taupe-kataifi-69a636.netlify.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
